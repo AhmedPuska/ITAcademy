@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <dictionary>
+        <word en="book">knjiga</word>  
+        <word bs="knjiga">book</word>
+        <word en="apple">jabuka</word>
+        <word bs="jabuka">apple</word>
+        <word en="tree">drvo</word>
+        <word bs="drvo">tree</word>
+    </dictionary>
