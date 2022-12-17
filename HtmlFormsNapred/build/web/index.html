@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+<!--        <form action = "process.jsp" method = "POST" enctype="multipart/form-data">
+         First Name: <input type = "text" name = "first_name">
+         <br />
+         Last Name: <input type = "text" name = "last_name" />
+         <br />
+         Gender: <input type = "radio" name="gender" value="male" >Male
+         Gender: <input type = "radio" name="gender" value="female" >Female
+         <input type = "submit" value = "Submit" />
+      </form>-->
+        <form action="process.jsp" method="POST" enctype="multipart/form-data">
+            <label>Enter your first name:</label><br>
+            <input type="text" name="first_name" value="" /><br>
+            <label>Enter your last name:</label><br>
+            <input type="text" name="last_name" value="" /><br>
+            <label>Select your gender:</label><br>
+<!--            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br>-->
+            <input type="radio" name="gender1" value="male" />Male
+            <input type="radio" name="gender1" value="female" />Female<br>
+            <label>Select your date of birth:</label><br>
+            <input type="date" name="date"/><br>
+            <label>Select plan:</label><br>
+            <select name="plan">
+                <option value="basic">Basic</option>
+                <option value="standard">Standard</option>
+                <option value="pro">Pro</option>
+            </select><br>
+            <label>Upload file:</label><br>
+            <input type="file" name="photo"/><br>
+            <label>Do you agree?</label><br>
+            <input type="checkbox" name="agree"/><br>
+            <input type="submit" value="Send" name="submit" />
+        </form>
+    </body>
+</html>

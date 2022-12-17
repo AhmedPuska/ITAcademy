@@ -1,0 +1,121 @@
+Da, aplikacija treba da se pokreće pomoću JOptionPane.showOptionDialog()-a sa YES_NO_CANCEL_OPTION-om. NO_OPTION odmah gasi aplikaciju. YES_OPTION treba da se otvara prvi JFrame, koji sadrži kontrole prikazane na slici u zadatku.
+
+Klikom na njegovo Start dugme, treba da se otvori drugi JFrame, čija će pozadina menjati boju, ali tako da boja i brzina "blinkanja" zavise od podešavanja kontrola u prvom JFrame-u.
+
+Treba da pozovete konstruktor neke druge klase (koja nasleđuje JFrame).
+
+
+Aplikacija treba da se pokreće pomoću JOptionPane.showOptionDialog()-a sa YES_NO_CANCEL_OPTION-om. NO_OPTION odmah gasi aplikaciju. YES_OPTION treba da se otvara prvi JFrame, koji sadrži kontrole prikazane na slici u zadatku.
+
+Klikom na njegovo Start dugme, treba da se otvori drugi JFrame, čija će pozadina menjati boju, ali tako da boja i brzina "blinkanja" zavise od podešavanja kontrola u prvom JFrame-u.
+
+U obe svrhe (čekanje do početka blinkanja i brzina blinkanja) možete koristiti klasu Timer i njene metode. Timer se koristi kako bi se određeni posao izvršio u nekom trenutku u budućnosti ili kako bi se određena logika izvršavala u određenim vremenskim razmacima, sve dok se tajmer ne zaustavi.
+
+
+Drugi JFrame (čija će pozadina menjati boju) treba da se pojavi u tačno podešeno vreme (u formatu HH:mm:ss) - u slučaju CountDown ili nakon izabranog broja sekundi - u slučaju OnTime.
+
+
+
+
+Pozdrav.Imam par pitanja u vezi poslednjeg assignmenta(Timer aplikacija).Kako da namestim da nakon isteka vremena on time da mi se ukljuci novi prozor koji blinka bojom kojom sam izabrao i brzinom.Posto po logici koju sam ja napravio pritiskom na dugme Start,momentalno se otvara prozor koji blinka bojom kojom sam izabrao i  timer se ukljuciuje i svi dugmici postaju nevidljivi osim stop,i pritiskom dugmeta stop timer se zaustavlja i dugmici postaju vidljivi kao sto se trazi u zadatku.Ali kako da namestim on time i countdown,posto video sam navedene  primere ispod sa Calendarom  i nisam siguran da sam razumeo,da li c1 i c2 predstavljau trenutno vreme(currentTime) i vreme koje sam izabrao ili? I da li celu tu logiku sa kalendarima trebam da smestim u Start buttom zajedno sa timerom,koiji ima parametar time ili?
+07.05.2018 14:32:51 Odgovori Sviđa mi se  
+
+offlineJelena Mladenović
+Vremena čekanja pre nego što se prikaže prozor koji blinka su:
+
+U 1. slučaju (onTime), na osnovu razlike dva datuma, tj. vremena u formatu HH:mm:ss, jednog (c1 u primeru koda) - unešenog u text polje i drugog - trenutnog vremena (c2). Ta razlika će biti broj sekundi između ta 2 trenutka.
+
+U 2. slučaju (countdown), samo treba da se sačeka izabrani broj sekundi.
+
+Dakle, potrebno je da se 2. prozor pojavi tek nakon def. vremena ili u def. vreme (za to može da služi npr. klasa Timer).
+07.05.2018 16:42:19
+
+offlineJelena Mladenović
+To računanje treba vršiti u ActionListener-u klika na Start dugme, u zavisnosti da li je selektovana onTime ili countDown opcija.
+
+
+
+Swing Timer klasa omogućava izvršavanje neke aktivnosti u određeno vreme ili ponavljanje određene aktivnosti u određenom vremenskom intervalu.
+
+Da bismo kreirali Timer, moramo proslediti dva parametra njegovom konstruktoru: inicijalni interval (u milisekundama) i slušač, čija će akcija biti aktivirana u zadatom intervalu.
+
+Sledeći primer instancira Timer objekat, a zatim ga pokreće metodom start():
+
+Timer t = new Timer(1, new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        f.setTitle("Time elapsed: " + (elapsed++).toString());
+    }
+});
+
+t.start();
+
+Ako hoćemo da zaustavimo Timer, koristimo metod stop().
+
+
+
+//mijenjanje boje 
+
+new Timer(speed, new ActionListener()
+{
+    public void actionPerformed(ActionEvent e)
+    {
+        new SwingWorker()
+        {
+            protected Object doInBackground()
+            {
+                getContentPane().setBackground(color); // Color color
+                //... pauza
+                getContentPane().setBackground(Color.white);
+                return null;
+            }
+        }.execute();
+    }
+}).start();
+
+
+
+//Kako napraviti instancu Timer klase da reaguje u odredjeno vreme, a ne na countdown. Jel je uradio to neko?
+
+DateFormat df = new SimpleDateFormat("HH:mm:ss");
+
+Calendar c1 = Calendar.getInstance();
+c1.setTime((Date) df.parse(jTextField1.getText()));
+		
+Calendar c2 = Calendar.getInstance();
+
+int h1 = c1.get(Calendar.HOUR_OF_DAY);
+int m1 = c1.get(Calendar.MINUTE);
+int s1 = c1.get(Calendar.SECOND);
+
+int h2 = c2.get(Calendar.HOUR_OF_DAY);
+int m2 = c2.get(Calendar.MINUTE);
+int s2 = c2.get(Calendar.SECOND);
+
+String ss1 = Integer.toString(h1) + ":" + Integer.toString(m1) + ":" + Integer.toString(s1);
+String ss2 = Integer.toString(h2) + ":" + Integer.toString(m2) + ":" + Integer.toString(s2);
+
+Date d1 = df.parse(ss1);
+Date d2 = df.parse(ss2);
+
+long time = d1.getTime() - d2.getTime(); // vreme čekanja do početka "blinkanja"
+int speed = jComboBox.getSelectedIndex() + 1; // brzina "binkanja"
+
+Timer t = new Timer(time, new ActionListener()
+{
+    void actionPerformed(ActionEvent e)
+    {
+        colorFrame.setVisible(true); // prikazuje se novi ColorFrame - prozor koji ste pojavljuje posle time-sekundi, blinka color-bojom i speed-brzinom
+    }
+});
+t.start();
+
+
+Treba podesiti JCheckBox-eve tako da samo jedan može biti čekiran u istom trenutku (ili raditi sa JRadioButton-ima). Takođe i pripadajuće JFormattedTextField-ove, tako da je aktivan samo onaj čiji je JCheckBox čekiran.
+
+
+Možete koristiti JFormattedTextField i npr. u prvom (onTime) slučaju SimpleDateFormat sa String-om za formatiranje oblika HH:mm:ss.
+
+
+U ActionListener-u koji je parametar metode JColorChooser.showDialog() treba preuzeti boju metodom getColor() klase JColorChooser.
+
+Iz jedne klase u drugu, boju možete "preneti" npr. kao parametar konstruktora ili statičko polje klase.
