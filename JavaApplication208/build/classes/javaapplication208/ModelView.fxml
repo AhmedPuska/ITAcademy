@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaapplication208.ModelViewController">
+    <children>
+        <VBox>
+            <children>
+                <HBox alignment="TOP_RIGHT">
+                    <children>
+                  <TableView fx:id="tabelView">
+                  </TableView>
+                        <Button mnemonicParsing="false" onAction="#closeForm" text="Close" />
+                    </children>
+                </HBox>
+                <Label text="Add New Person" />
+<!--                <TextField fx:id="tfImePrezime" promptText="Ime &amp; Prezime" />
+                <TextField fx:id="tfAdresa" promptText="Adresa" />-->
+                <HBox fillHeight="true" />
+                <HBox alignment="TOP_RIGHT">
+                    <children>
+<!--                        <Label text="Brzina" />
+                        <ComboBox fx:id="cbBrzina" />
+                        <Label text="Protok" />
+                        <ComboBox fx:id="cbProtok" />
+                        <Label text="Ugovor" />-->
+                        <!--<ComboBox fx:id="cbUgovor" />-->
+                        <!--<Button fx:id="saveBtn" mnemonicParsing="false" onAction="#savePerson" text="Save" />-->
+                        <!--<Button fx:id="clearBtn" mnemonicParsing="false" onAction="#clearPerson" text="Clear" />-->
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deletePerson" text="Delete" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>
