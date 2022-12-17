@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="javaapplication225">
+<!--    <class name="javaapplication225.Publisher" table="PUBLISHER">
+        <meta attribute="class-description">
+            This class contains the person details 
+        </meta>
+        <id name="publisherId" type="int" column="publisher_id">
+            <generator class="increment"/>
+        </id>
+        <property name="name" column="name" />
+        <property name="address" column="address"/>
+        <property name="age" column="age" type="int"/>
+        <set name="books" inverse="true" cascade="save-update">
+               <key column="publisher_id" not-null="true"/>
+               <one-to-many class="javaapplication225.Book"/>
+        </set>
+    </class>-->
+    
+    <!--Book klasa sa many to one-->
+<!--    <class name="javaapplication225.Book" table="BOOK">
+        <id name="bookId" column="book_id" >
+            <generator class="increment"/>
+        </id>
+        <property name="title" column="title"/>
+        <property name="pageNo" column="page_no" type="int"/>
+        <many-to-one cascade="save-update" class="javaapplication225.Publisher" name="publisher" column="publisher_id" >
+        </many-to-one>
+    </class>-->
+    
+    
+    <!--Book klasa sa many to many-->
+<!--    <class name="javaapplication225.Book" table="BOOK">
+        <id name="bookId" column="book_id" >
+            <generator class="identity"/>
+        </id>
+        <property name="title" column="title"/>
+        <property name="pageNo" column="page_no" type="int"/>
+        <set name="authors" table="BOOK_AUTHOR" inverse="true">
+            <key>
+                <column name="book_id" not-null="true"/>
+            </key>
+            <many-to-many class="javaapplication225.Author">
+                <column name="author_id" not-null="true"/>
+            </many-to-many>
+        </set>
+ 
+    </class>
+    
+    <class name="javaapplication225.Author" table="author">
+        <id name="authorId" column="author_id">
+            <generator class="identity"></generator>
+        </id>
+        <property name="name" column="name" />
+        <set name="books" table="BOOK_AUTHOR" inverse="false" cascade="save-update">
+            <key>
+                <column name="author_id" not-null="true"/>
+            </key>
+            <many-to-many class="javaapplication225.Book">
+                <column name="book_id" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+-->    
+    <class name="javaapplication225.Book" table="BOOK">
+        <id name="bookId" column="book_id" >
+            <generator class="identity"/>
+        </id>
+        <property name="title" column="title"/>
+        <property name="pageNo" column="page_no" type="int"/>
+        <many-to-one name="isbn" column="isbn_id" unique="true" 
+                     class="javaapplication225.Isbn" not-null="true" cascade="all" />
+    </class>
+    
+    <class name="javaapplication225.Isbn" table="ISBN" > 
+        <id name="isbnId" column="isbn_id"> 
+            <generator class="identity"/> 
+        </id>
+        <property name="isbnNumber" column="isbn_number"/> 
+        <property name="dateIssued" column="date_issued" type="date"/>
+    </class> 
+    
+</hibernate-mapping>
