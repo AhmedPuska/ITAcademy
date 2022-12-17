@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<!--<HBox  xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" >
+    <stylesheets>
+        <URL value="@vjezba.css"/>
+    </stylesheets>
+    <children>
+    <VBox >
+    <children>
+    <HBox alignment="TOP_CENTER">
+    <children>
+            <Text text="Regristovanjeprodaje">
+                <font>
+                    <Font size="15.0"/>
+                </font>
+            </Text>
+    </children>
+    </HBox>
+    
+    
+    
+    </VBox>
+        <VBox >
+            <children>
+            
+            
+                 <HBox alignment="TOP_LEFT">
+                    <children>
+                        <Label text="Brzina protoka"/>
+                        <ComboBox promptText="Izabrati nesto"/>
+                        <Label text="Mbit"/>
+                    </children>
+                </HBox>
+                <HBox> 
+                    <children>
+                <Label text="Protok" />
+                <ComboBox fx:id="lastName"  promptText="Last name" />
+                <Label fx:id="firstName"  text="Gb" />
+                    </children>
+                </HBox>
+                <HBox> 
+                    <children>
+                <Label text="Protok" />
+                <ComboBox fx:id="lastNeame"  promptText="Trajanje ugovora:" />
+                <Label fx:id="firstNeame"  text="god." />
+                    </children>
+                </HBox>
+                <HBox fillHeight="true" >
+                    <children>
+                         <Label text="Ime i prezime korisnika: " />
+                         <TextField />
+                    </children>
+                </HBox>
+                <HBox fillHeight="true" >
+                    <children>
+                         <Label text="Ime i prezime korisnika: " />
+                         <TextField />
+                    </children>
+                </HBox>
+                <HBox alignment="BOTTOM_LEFT">
+                    <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" text="Sell" />
+                    </children>
+                </HBox>
+                <HBox alignment="BASELINE_CENTER" spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+                    <children>
+                        <Button text="Obrisi selektovanu prodaju"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+</HBox>-->
+
+
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import model.*?> 
+
+<GridPane  fx:controller="controller.VjezbaController" alignment="CENTER" hgap="5.0" vgap="5.0" xmlns:fx="http://javafx.com/fxml/1" >
+    <children>
+        <VBox GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="7">
+            <children>
+                <TableView fx:id="tableView"  GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <columns>
+                         <TableColumn text="Id" prefWidth="70">
+                             <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                         </TableColumn>
+                         <TableColumn text="Ime i prezime" prefWidth="120">
+                             <cellValueFactory><PropertyValueFactory property="imePrezime"/></cellValueFactory>
+                         </TableColumn>
+                         <TableColumn text="Adresa">
+                             <cellValueFactory><PropertyValueFactory property="adresa"/></cellValueFactory>
+                         </TableColumn>
+                         <TableColumn text="Ugovor">
+                             <cellValueFactory><PropertyValueFactory property="ugovor"/></cellValueFactory>
+                         </TableColumn>
+                         <TableColumn text="Brzina">
+                             <cellValueFactory><PropertyValueFactory property="brzina"/></cellValueFactory>
+                         </TableColumn>
+                         <TableColumn text="Protok">
+                             <cellValueFactory><PropertyValueFactory property="protok"/></cellValueFactory>
+                         </TableColumn>
+                    </columns>
+                    <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <VjezbaModelController  imePrezime="Jacob"   
+                         adresa="jacob.smith@example.com"/>
+                    <VjezbaModelController  imePrezime="Isabella Johnson" 
+                         adresa="isabella.johnson@example.com"/>
+                    <VjezbaModelController  imePrezime="Ethan Williams" 
+                         adresa="ethan.williams@example.com"/>
+                    <VjezbaModelController  imePrezime="Emma Jones"
+                         adresa="emma.jones@example.com"/>
+                    <VjezbaModelController  imePrezime="Michael Brown" 
+                         adresa="michael.brown@example.com"/>
+                </FXCollections>
+</items>    
+                </TableView>
+            </children>
+        </VBox>
+        <HBox alignment="TOP_RIGHT" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="0">
+            <children>
+                <Button fx:id="clsoeBtn"/>
+            </children>
+        </HBox>
+        <Label text="Regristovanje prodaje" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="3">
+            <font>
+                <Font size="30.0"/>
+            </font>
+        </Label>
+        
+        <Label text="Brzina protoka" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Protok" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label text="Trajanje ugovora" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label text="Ime i prezime korisnika" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Label text="Adresa korisnika" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <ComboBox fx:id="cbBrzina" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <ComboBox fx:id="cbProtok" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <ComboBox fx:id="cbUgovor" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <TextField fx:id="tfImePrezime" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <TextField fx:id="tfAdresa" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        
+        <HBox alignment="TOP_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <children>
+                <Button mnemonicParsing="true" text="Prodaj" fx:id="prodajaBtn" onAction="#prodaj" />
+            </children>
+        </HBox>
+        <HBox alignment="TOP_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="7">
+            <children>
+                <Button mnemonicParsing="true" text="Obrisi" fx:id="obrisiBtn" onAction="#obrisiProdaju" />
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+    
+    
+</GridPane>

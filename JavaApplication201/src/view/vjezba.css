@@ -1,0 +1,28 @@
+/*
+ * Empty Stylesheet file.
+ */
+/*
+.mainFxmlClass {
+
+}*/
+
+.root {
+    -fx-background-color: aqua;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #FFFFFF;
+    -fx-text-fill: white;
+}
+#prodajaBtn, #obrisiBtn {
+    -fx-background-color: transparent;
+    -fx-border-color: #FFFFFF;
+    -fx-font-veight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-file: white;
+}
