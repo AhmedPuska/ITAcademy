@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>  
+<?import java.net.*?>  
+<?import java.util.*?>  
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?> 
+
+    <BorderPane id="bp1" prefHeight="462.0" prefWidth="473.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.ProdajaController" >  
+    <stylesheets>  
+      <URL value="@ProdajaStil.css"/>  
+    </stylesheets>
+    <top>  
+      <HBox fx:id="hbTit">  
+        <Label fx:id="lbl1" text="Registrovanje prodaje:" />  
+      </HBox>  
+    </top> 
+    <left>  
+      <VBox fx:id="vbox1" spacing="20">  
+        <BorderPane.margin>  
+          <Insets top="25.0" />  
+        </BorderPane.margin>  
+        <children>  
+          <HBox spacing="10" alignment="BASELINE_LEFT">  
+            <children>  
+              <Label fx:id="lbl2" text="Brzina protoka: " />  
+              <ChoiceBox fx:id="cbBrzina" value="2" />  
+              <Label text=" Mbit"/>  
+            </children>  
+          </HBox>  
+          <HBox spacing="10" alignment="BASELINE_LEFT">  
+            <children>
+              <Label fx:id="lbl3" text="Protok: " />  
+              <ChoiceBox fx:id="cbProtok" />  
+              <Label text=" GB" />  
+            </children>
+          </HBox>  
+          <HBox spacing="10" alignment="BASELINE_LEFT">  
+            <children>  
+              <Label fx:id="lbl4" text="Trajanje ugovora: " />  
+              <ChoiceBox fx:id="cbUgovor"/>  
+              <Label text=" god." />  
+            </children>  
+          </HBox>  
+          <HBox spacing="10" alignment="BASELINE_LEFT">  
+            <children>  
+              <Label fx:id="lbl5" text="Ime i prezime korisnika: " />  
+              <TextField fx:id="tfImePrezime"/>  
+            </children>  
+          </HBox>  
+          <HBox spacing="10" alignment="BASELINE_LEFT">  
+            <children>  
+              <Label fx:id="lbl6" text="Adresa korisnika: " />  
+              <TextField fx:id="tfAdresa"/>  
+            </children>  
+          </HBox>  
+          <Button fx:id="prodajaBtn" text="Prodaj" AnchorPane.leftAnchor="0.0" onAction="#prodaj" />  
+          <Label /> <Label /> <Label />   
+          <AnchorPane fx:id="apDel">  
+            <HBox fx:id="vbDel" alignment="BASELINE_CENTER" spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">  
+              <Button fx:id="delBtn" text="Obrisi selektovanu prodaju" onAction="#obrisiProdaju" />  
+            </HBox>  
+          </AnchorPane>      
+        </children>  
+      </VBox>  
+    </left>    
+    <center>  
+      <AnchorPane>  
+        <BorderPane.margin>  
+          <Insets bottom="0.0" left="25.0" top="25.0" right="0.0"/>  
+        </BorderPane.margin>  
+          <ListView fx:id="listView" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />  
+      </AnchorPane>  
+    </center>
+</BorderPane>

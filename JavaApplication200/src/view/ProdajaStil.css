@@ -1,0 +1,12 @@
+.root {  
+    -fx-padding: 20;  
+   -fx-background-color: #c5d5cb;  
+ }  
+   
+  #apDel {  
+   -fx-Background-color: #9fa8a3;  
+ }  
+   
+  #hbTit .label {  
+  -fx-text-fill: white;  
+ } 
