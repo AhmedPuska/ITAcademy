@@ -1,0 +1,13 @@
+
+package javaapplication251;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService
+public class Sabiranje {
+    @WebMethod
+    public int saberi(int a, int b) {
+        return a + b;
+    }
+}
