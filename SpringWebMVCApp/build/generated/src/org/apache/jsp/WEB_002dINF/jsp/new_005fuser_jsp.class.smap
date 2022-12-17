@@ -1,0 +1,10 @@
+SMAP
+new_005fuser_jsp.java
+JSP
+*S JSP
+*F
++ 0 new_user.jsp
+WEB-INF/jsp/new_user.jsp
+*L
+5,89:44
+*E
