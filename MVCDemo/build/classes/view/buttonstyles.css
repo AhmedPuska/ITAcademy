@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+ 
+    Created on : Jul 15, 2018, 12:04:01 PM
+    Author     : user
+
+* {
+-fx-text-fill: blue;
+}
+#pane {
+    -fx-cursor: hand;
+    -fx-border-color: blue;
+    -fx-border-width: 5px;
+}
+.button:hover {
+-fx-text-fill: red;
+}*/
+
+
+.root {
+    -fx-background-color: #373435;
+}
+.label {
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #FFFFFF;
+    -fx-text-fill: white;
+}
+
+.text-field:hover, text-field:focused {
+    -fx-border-color: #75606F;
+}
+
+#saveBtn, #clearBtn {
+    -fx-background-color: transparent;
+    -fx-border-color: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: white;
+}
+
+#closeBtn {
+    -fx-graphic: url('cow.jpg');
+    -fx-background-color: transparent;
+    -fx-border-width:0.0;
+}
+
+#closeBtn:hover {
+    -fx-graphic: url('rgp.png')
+}
+
+#saveBtn:hover, #clearBtn:hover {
+    -fx-border-color: #75606F;
+}
+
+#saveBtn:pressed, #clearBtn:pressed {
+    -fx-border-color: #75606F;
+    -fx-background-color: #75606F;
+}
