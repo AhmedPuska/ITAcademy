@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+
+<VBox xmlns:fx="http://javafx.com/fxml">
+   <TextField fx:id="mainText" text="Hello"/>
+   <TextField fx:id="mirrorText" text="${mainText.text}" disable="true"/>
+</VBox>
+<!--<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="mvc.SayHelloController"
+xmlns:fx="http://javafx.com/fxml">
+</VBox>-->
+<!--<GridPane alignment="CENTER" hgap="5.0" vgap="5.0">
+    <children>
+        <Text text="Add New Person" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+            <font>
+                <Font size="30.0"/>
+            </font>
+        </Text>
+        <Label text="First name" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Label text="Last name" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Label text="Adress" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <Label text="Country" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        <HBox alignment="TOP_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <children>
+                <Button mnemonicParsing="true" text="_Save" />
+                <Button mnemonicParsing="true" text="_Clear" />
+            </children>
+        </HBox>
+        
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+</GridPane>-->
