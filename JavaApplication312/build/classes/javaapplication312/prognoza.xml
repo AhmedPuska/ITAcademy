@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<prognoze>
+    <prognoza id="4">
+        <grad>Beograd</grad>
+        <temperatura>29</temperatura>
+    </prognoza>
+    <prognoza id="7">
+        <grad>Novi Sad</grad>
+        <temperatura>27</temperatura>
+    </prognoza>
+    <prognoza id="11">
+        <grad>Juneau</grad>
+        <temperatura>15</temperatura>
+    </prognoza>
+</prognoze>
