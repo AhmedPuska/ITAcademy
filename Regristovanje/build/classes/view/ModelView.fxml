@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<HBox prefHeight="507.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProdajaController">
+    <children>
+        <VBox>
+            <children>
+                <HBox alignment="TOP_RIGHT">
+                    <children>
+                  <TableView fx:id="tabelView" prefHeight="400.0" prefWidth="528.0">
+                  </TableView>
+                    </children>
+                </HBox>
+                <Label prefHeight="17.0" prefWidth="93.0" text="Add New User" />
+                <TextField fx:id="tfImePrezime" prefHeight="25.0" prefWidth="376.0" promptText="Ime &amp; Prezime" />
+                <TextField fx:id="tfAdresa" promptText="Adresa" />
+                <HBox fillHeight="true" />
+                <HBox alignment="TOP_RIGHT">
+                    <children>
+                        <Label text="Brzina" />
+                        <ComboBox fx:id="cbBrzina"  />
+                        <Label text="Protok" />
+                        <ComboBox fx:id="cbProtok" />
+                        <Label text="Ugovor" />
+                        <ComboBox fx:id="cbUgovor" />
+                        <Button fx:id="clearBtn" mnemonicParsing="false" onAction="#savePerson" text="Save" />
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deletePerson" text="Delete" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>
