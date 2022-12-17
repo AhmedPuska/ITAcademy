@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books SYSTEM "intro.dtd">
+<!--<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="intro.xsd">-->
+<books>
+    <book id="01" isbn="12345">
+        <title>Childhood's End</title> 
+        <author>Arthur Clarke</author> 
+    </book>
+    <book id="02" isbn="67890">
+        <title>The Merchant of Venice</title> 
+        <author>William Shakespeare</author> 
+    </book>
+</books>
