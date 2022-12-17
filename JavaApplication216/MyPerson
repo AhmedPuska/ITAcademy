@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_151" class="java.beans.XMLDecoder">
+ <object class="javaapplication216.Person">
+  <void property="age">
+   <int>33</int>
+  </void>
+  <void property="name">
+   <string>John Deen</string>
+  </void>
+  <void property="pid">
+   <string>313/AB</string>
+  </void>
+ </object>
+</java>
