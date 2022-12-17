@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="500" prefWidth="350" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+       <Label text="Registaration">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+       <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+          <children>
+              <TextField fx:id="firstName" promptText="firstname" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+              <TextField fx:id="lastName" promptText="lastname" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+              <TextField fx:id="email" promptText="email" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+              <PasswordField fx:id="password" promptText="password" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+              <DatePicker fx:id="bday" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+              <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                 <children>
+                     <RadioButton fx:id="m" text="male">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
+                  </RadioButton>
+                     <RadioButton fx:id="f" text="female" toggleGroup="$gender">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </RadioButton>
+                 </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+              </HBox>
+              <Button fx:id="register" onAction="#register" text="Create a New Account" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+          </children>
+       </GridPane>
+   </children>
+</VBox>
