@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="country_schema.xsd">
+    <country countryCode="fr">
+        <name>France</name>
+        <capital>Paris</capital>
+        <description>France is ...</description>
+        <population>66616416</population>
+        <ruler>
+            <ruler_name>Franccis Hollande</ruler_name>
+            <date_of_birth>1954-08-12+01:00</date_of_birth>
+        </ruler>
+    </country>
+    <country countryCode="De">
+        <name>Germany</name>
+        <capital>Berlin</capital>
+        <description>Germany is ...</description>
+        <population>80716000</population>
+        <ruler>
+            <ruler_name>Joachim Gauck</ruler_name>
+            <date_of_birth>1940-02-24+01:00</date_of_birth>
+        </ruler>
+    </country>
+</root>

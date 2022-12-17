@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<country countryCode="de">
+    <name>Germany</name>
+    <capital>Berlin</capital>
+    <description>Germany is ...</description>
+    <population>80716000</population>
+    <ruler>
+        <ruler_name>Joachim Gauck</ruler_name>
+        <date_of_birth>1940-02-24+01:00</date_of_birth>
+    </ruler>
+</country>
