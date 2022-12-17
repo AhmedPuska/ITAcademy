@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="javaapplication94.ProbniKontroler" id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http:/javafx.com/javafx/8">
+    <children>
+       <Label layoutX="41.0" layoutY="43.0">Hello man</Label>
+    <Button id="taster" fx:id="taster" layoutX="78.0" layoutY="82.0" onAction="#klik">Klikni me</Button> 
+    <ColorPicker layoutX="161.0" layoutY="39.0"/>
+    <ComboBox layoutX="78.0" layoutY="124.0" prefWidth="150.0"/>
+    </children>
+    
+</AnchorPane>
