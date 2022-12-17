@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<employees>
+   <employee id="1111" type="admin">
+      <FirstName>Tanmay</FirstName>
+      <LastName>Patil</LastName>
+      <age>30</age>
+      <email>neki@email.com</email>
+   </employee>
+   <employee id="2222" type="admin">
+      <FirstName>Taniya</FirstName>
+      <LastName>Mishra</LastName>
+      <age>44</age>
+      <email>neki@email.com</email>
+   </employee>
+   <employee id="3333" type="user">
+      <FirstName>Neki</FirstName>
+      <LastName>Mishra</LastName>
+      <age>22</age>
+      <email>neki@email.com</email>
+   </employee>
+   <employee id="4444" type="user">
+      <FirstName>Peti</FirstName>
+      <LastName>Sesti</LastName>
+      <age>34</age>
+      <email>neki@email.com</email>
+   </employee>
+</employees>
